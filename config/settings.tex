@@ -1,8 +1,11 @@
-% ===== CÀI ĐẶT HYPERLINK =====
-% \hypersetup{
-%     colorlinks=false,
-%     pdfborder={0 0 1},
-% }
+% ===== LỀ TRANG =====
+\geometry{
+  a4paper,
+  top=2.5cm,
+  bottom=2.5cm,
+  left=3cm,
+  right=2cm
+}
 
 % ===== CÀI ĐẶT CHO CODE =====
 % \lstdefinestyle{mystyle}{
@@ -29,15 +32,23 @@
 \onehalfspacing
 
 % ===== ĐỊNH DẠNG TIÊU ĐỀ =====
-% \titleformat{\section}
-%   {\normalfont\Large\bfseries}{\thesection}{1em}{}
-% \titleformat{\subsection}
-%   {\normalfont\large\bfseries}{\thesubsection}{1em}{}
+% Chuyển tiêu đề chương sang số la mã
+\renewcommand{\thechapter}{\Roman{chapter}}
+% Chuyển tiêu đề chương thành 1 dòng
+\titleformat{\chapter}
+  {\normalfont\huge\bfseries}
+  {Chương \thechapter}
+  {1em}
+  {}
+% Loại bỏ chương khi đánh số phần
+% Ví dụ: I.1.1 -> 1.1
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
 
-% ===== HEADER VÀ FOOTER =====
+% ===== HEADER =====
 \pagestyle{fancy}
-\fancyhf{}
+\fancyhead{}
 \fancyhead[RE,LO]{\nouppercase{\leftmark}}
-\fancyhead[LE,RO]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \setlength{\headheight}{14.3pt}
