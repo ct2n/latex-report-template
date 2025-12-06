@@ -2,38 +2,38 @@
 
 ## 1. Giới thiệu
 
-Mẫu báo cáo LaTeX tiếng Việt, hỗ trợ công thức toàn và tô màu code.
+Mẫu báo cáo LaTeX tiếng Việt hỗ trợ định dạng công thức và tô màu mã nguồn.
 
 ## 2. Yêu cầu và tương thích
 
-Yêu cầu sử dụng pdfLatex compiler và bật sẵn shell-escape cho minted
+Bắt buộc biên dịch bằng pdfLaTeX và kích hoạt sẵn chế độ shell-escape để sử dụng gói minted.
 
-> Overleaf đã có sẵn, có thể dùng trực tiếp.
+> Overleaf đã cấu hình sẵn các thiết lập này, có thể dùng trực tiếp.
 
 ## 3. Cấu trúc thư mục chính
 
-- `main.tex`: ghép toàn bộ tài liệu, gọi các `\input` chương/phụ lục.
-- `config/`:
-  - `info.tex`: các thông tin được hiển thị trên trang bìa
-  - `titlepage.tex`: trang bìa,
+- `main.tex`: tệp tổng hợp toàn bộ nội dung, quản lý các tệp chương và phụ lục thông qua `\input`.
+- `config/` gồm:
+  - `info.tex`: thông tin trình bày trên trang bìa.
+  - `titlepage.tex`: bố cục trang bìa.
   - `packages.tex`: danh sách các gói được sử dụng,
-  - `settings.tex`: thiết lập khổ giấy, lề, giãn dòng, đánh số,...
-- `chapters/`: nội dung các chương
-- `appendix/`: nội dung phụ lục
-- `reference/references.bib`: danh mục tài liệu tham khảo
-- `images/`: chứa các hình ảnh được sử dụng trong báo cáo
+  - `settings.tex`: cấu hình khổ giấy, lề, giãn dòng và đánh số,...
+- `chapters/`: các chương nội dung chính.
+- `appendix/`: phần phụ lục.
+- `reference/references.bib`: danh mục tài liệu tham khảo.
+- `images/`: thư mục chứa hình minh họa.
 
 ## 4. Tùy chỉnh thông tin
 
 - Cập nhật thông tin trong `config/info.tex` (trường, tên đề tài, nhóm, giảng viên, sinh viên,...).
-- Đổi bố cục bìa (nếu cần): chỉnh trong `config/titlepage.tex`.
-- Thay đổi lề/giãn dòng/đánh số: chỉnh trong `config/settings.tex`.
-- Thêm/bớt gói: `config/packages.tex` (giữ minted nếu cần tô màu code).
+- Thay đổi bố cục trang bìa tại `config/titlepage.tex` nếu cần.
+- Điều chỉnh lề, giãn dòng hoặc đánh số,... trong `config/settings.tex`.
+- Bổ sung hay loại bỏ gói trong `config/packages.tex` (giữ minted nếu cần tô màu code).
 
 ## 5. Thêm và quản lý nội dung
 
 - Chương chính: viết ở `chapters/*.tex`; thêm/bớt chương bằng cách chỉnh danh sách `\input` trong `main.tex`.
-- Phụ lục: đặt sau lệnh `\appendix` trong `main.tex`, nội dung trong `appendix/*.tex`.
+- Phụ lục được khai báo sau lệnh `\appendix` trong `main.tex`, nội dung trong `appendix/*.tex`.
 - Hình ảnh: lưu vào `images/`, chèn với `\includegraphics`.
 - Bảng/code: tham khảo ví dụ sẵn trong các file chương và phụ lục.
 
